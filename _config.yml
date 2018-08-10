@@ -81,5 +81,5 @@ deploy:
   type: git
   repo: 
     github: git@github.com:allenpzx/allenpzx.github.io.git
-    gitee: git@gitee.com:pengzixiu/blog.git
+    gitee: git@gitee.com:pengzixiu/zixiu.git
   branch: master
