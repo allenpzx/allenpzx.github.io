@@ -1,2 +1,2 @@
-# blog
-blog by hexo
+#### Info
+It's ZiXiu's blog
