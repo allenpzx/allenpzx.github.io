@@ -3,6 +3,7 @@ title: Fitness Diet
 date: {{ date }}
 tags:
 - Diet
+- training
 ---
 
 ###   碳水化合物
