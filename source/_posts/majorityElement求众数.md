@@ -3,6 +3,8 @@ title: majorityElement
 date: {{ date }}
 tags:
 - JavaScript
+categories:
+- JavaScript
 ---
 
 ```typescript

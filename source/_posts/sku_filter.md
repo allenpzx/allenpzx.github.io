@@ -5,6 +5,8 @@ tags:
 - JavaScript
 - SKU
 - filter
+categories:
+- JavaScript
 ---
 
 ### sku-filter

@@ -3,6 +3,8 @@ title: getType
 date: {{ date }}
 tags:
 - JavaScript
+categories:
+- JavaScript
 ---
 
 ```javascript

@@ -4,7 +4,8 @@ date: {{ date }}
 tags:
 - JavaScript
 - Animation
-
+categories:
+- JavaScript
 ---
 
 ## JavaScript Origin animation

@@ -4,6 +4,8 @@ date: {{ date }}
 tags:
 - Diet
 - training
+categories:
+- JavaScript
 ---
 
 ###   碳水化合物

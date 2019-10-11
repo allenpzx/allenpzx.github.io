@@ -3,6 +3,8 @@ title: 函数表现
 date: {{ date }}
 tags:
 - JavaScript
+categories:
+- JavaScript
 ---
 
 

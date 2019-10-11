@@ -1,3 +1,12 @@
+---
+title: typeof 特性
+date: {{ date }}
+tags:
+- JavaScript
+categories:
+- JavaScript
+---
+
 **`typeof` 特性**
 
 ```javascript

@@ -3,6 +3,8 @@ title: isPalindrome
 date: {{ date }}
 tags:
 - JavaScript
+categories:
+- JavaScript
 ---
 
 ```typescript

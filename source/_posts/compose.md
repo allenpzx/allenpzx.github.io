@@ -3,6 +3,8 @@ title: compose
 date: {{ date }}
 tags:
 - JavaScript
+categories:
+- JavaScript
 ---
 
 ```typescript

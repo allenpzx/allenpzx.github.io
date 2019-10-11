@@ -5,6 +5,8 @@ tags:
 - JavaScript
 - Animation
 - Shuffle
+categories:
+- JavaScript
 ---
 
 ```typescript

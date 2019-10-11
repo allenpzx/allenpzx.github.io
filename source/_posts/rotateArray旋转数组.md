@@ -3,6 +3,8 @@ title: rotateArray
 date: {{ date }}
 tags:
 - JavaScript
+categories:
+- JavaScript
 ---
 
 ```typescript

@@ -3,6 +3,8 @@ title: merge
 date: {{ date }}
 tags:
 - JavaScript
+categories:
+- JavaScript
 ---
 
 ```typescript

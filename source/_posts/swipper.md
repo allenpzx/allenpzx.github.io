@@ -4,7 +4,8 @@ date: {{ date }}
 tags:
 - swiper
 - CSS
-
+categories:
+- JavaScript
 ---
 ## Swiper
 
