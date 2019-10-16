@@ -59,14 +59,14 @@
 <meta name="keywords" content="blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Zixiu">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
 <meta property="og:site_name" content="Zixiu">
 <meta property="og:description" content="Front-End Engineer">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Zixiu">
 <meta name="twitter:description" content="Front-End Engineer">
-  <link rel="canonical" href="http://yoursite.com/page/3/">
+  <link rel="canonical" href="http://yoursite.com/page/4/">
 
 
 <script id="page-configurations">
@@ -239,7 +239,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/partition分割回文串/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/getType/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZiXiu">
@@ -254,7 +254,7 @@
         <h1 class="post-title" itemprop="name headline">
           
             
-            <a href="/2019/09/28/partition分割回文串/" class="post-title-link" itemprop="url">partition</a>
+            <a href="/2019/09/28/getType/" class="post-title-link" itemprop="url">getType</a>
           
         </h1>
 
@@ -280,7 +280,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-16 19:06:50" itemprop="dateModified" datetime="2019-10-16T19:06:50+08:00">2019-10-16</time>
+                <time title="Modified: 2019-10-16 19:06:35" itemprop="dateModified" datetime="2019-10-16T19:06:35+08:00">2019-10-16</time>
               </span>
             
           
@@ -313,7 +313,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">partition</span>(<span class="params">s: <span class="built_in">string</span></span>): <span class="title">string</span>[] </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> res = [],</span><br><span class="line">    arr = [];</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">isPalindrome</span>(<span class="params">i: <span class="built_in">number</span>, j: <span class="built_in">number</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (; i &lt; j; ) &#123;</span><br><span class="line">      <span class="keyword">if</span> (s[i] !== s[j]) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      i++;</span><br><span class="line">      j--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">loop</span>(<span class="params">left: <span class="built_in">number</span>, right: <span class="built_in">number</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (left === s.length) &#123;</span><br><span class="line">      <span class="keyword">return</span> res.push(arr.slice());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (right &gt; s.length) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (isPalindrome(left, right - <span class="number">1</span>)) &#123;</span><br><span class="line">      arr.push(s.slice(left, right));</span><br><span class="line">      loop(right, right + <span class="number">1</span>);</span><br><span class="line">      arr.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    loop(left, right + <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  loop(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;object&#125; </span></span><br><span class="line"><span class="comment"> * @return &#123;string&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getType</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString</span><br><span class="line">    .call(obj)</span><br><span class="line">    .match(<span class="regexp">/\s[a-zA-Z]+/</span>)[<span class="number">0</span>]</span><br><span class="line">    .toLowerCase();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
       
     </div>
@@ -335,7 +335,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/moveZeroes移动零/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/compose/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZiXiu">
@@ -350,7 +350,7 @@
         <h1 class="post-title" itemprop="name headline">
           
             
-            <a href="/2019/09/28/moveZeroes移动零/" class="post-title-link" itemprop="url">moveZeroes</a>
+            <a href="/2019/09/28/compose/" class="post-title-link" itemprop="url">compose</a>
           
         </h1>
 
@@ -376,7 +376,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-16 19:06:47" itemprop="dateModified" datetime="2019-10-16T19:06:47+08:00">2019-10-16</time>
+                <time title="Modified: 2019-10-16 19:06:14" itemprop="dateModified" datetime="2019-10-16T19:06:14+08:00">2019-10-16</time>
               </span>
             
           
@@ -409,7 +409,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @return &#123;void&#125; Do not return anything, modify nums in-place instead.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> moveZeroes = <span class="function"><span class="keyword">function</span>(<span class="params">nums: <span class="built_in">number</span>[]</span>): <span class="title">void</span> </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> start = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> end = nums.length - <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span> (start &lt; end) &#123;</span><br><span class="line">    <span class="keyword">if</span> (nums[start] === <span class="number">0</span>) &#123;</span><br><span class="line">      nums.push(<span class="number">0</span>);</span><br><span class="line">      nums.splice(start, <span class="number">1</span>);</span><br><span class="line">      end--;</span><br><span class="line">      <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    start++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @param  &#123;...fn||arg&#125; fns from right to left</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compose</span>(<span class="params">...fns</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> fns.reduceRight(<span class="function">(<span class="params">arg, fn</span>) =&gt;</span> fn(arg), x);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @param  &#123;...fn||arg&#125; fns from left to right</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pipe</span>(<span class="params">...fns</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> fns.reduce(<span class="function">(<span class="params">arg, fn</span>) =&gt;</span> fn(arg), x);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
       
     </div>
@@ -431,7 +431,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/merge合并两个有序数组/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/fitness_diet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZiXiu">
@@ -446,7 +446,7 @@
         <h1 class="post-title" itemprop="name headline">
           
             
-            <a href="/2019/09/28/merge合并两个有序数组/" class="post-title-link" itemprop="url">merge</a>
+            <a href="/2019/09/28/fitness_diet/" class="post-title-link" itemprop="url">Fitness Diet</a>
           
         </h1>
 
@@ -461,7 +461,7 @@
                 
               
 
-              <time title="Created: 2019-09-28 21:11:47" itemprop="dateCreated datePublished" datetime="2019-09-28T21:11:47+08:00">2019-09-28</time>
+              <time title="Created: 2019-09-28 22:32:24" itemprop="dateCreated datePublished" datetime="2019-09-28T22:32:24+08:00">2019-09-28</time>
             </span>
           
             
@@ -472,7 +472,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-16 19:06:45" itemprop="dateModified" datetime="2019-10-16T19:06:45+08:00">2019-10-16</time>
+                <time title="Modified: 2019-10-16 19:06:11" itemprop="dateModified" datetime="2019-10-16T19:06:11+08:00">2019-10-16</time>
               </span>
             
           
@@ -483,8 +483,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/fitness/" itemprop="url" rel="index">
+                    <span itemprop="name">fitness</span>
                   </a>
                 </span>
 
@@ -505,7 +505,56 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums1</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; m</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums2</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; n</span></span><br><span class="line"><span class="comment"> * @return &#123;void&#125; Do not return anything, modify nums1 in-place instead.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> merge = <span class="function"><span class="keyword">function</span>(<span class="params">nums1: <span class="built_in">number</span>[], m: <span class="built_in">number</span>, nums2: <span class="built_in">number</span>[], n: <span class="built_in">number</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> s1 = nums1.slice(<span class="number">0</span>, m);</span><br><span class="line">    <span class="keyword">let</span> s2 = nums2.slice(<span class="number">0</span>, n);</span><br><span class="line">    [...s1, ...s2].sort(<span class="function">(<span class="params">a, b</span>)=&gt;</span>a-b).map(<span class="function">(<span class="params">v, k</span>) =&gt;</span> nums1[k] = v);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <h3 id="碳水化合物"><a href="#碳水化合物" class="headerlink" title="碳水化合物"></a>碳水化合物</h3><ol>
+<li><p>玉米茬 =&gt; 玉米粥 玉米饭</p>
+</li>
+<li><p>紫米 =&gt; 紫米粥 =&gt; 紫米饭 饭团包菜肉</p>
+</li>
+<li><p>意面 =&gt; 优先选择螺纹和空心粉容易沾染酱汁入味</p>
+</li>
+<li><p>红薯 =&gt; 好吃大于紫薯好处理</p>
+</li>
+<li><p>山药 =&gt; 优质碳水</p>
+</li>
+<li><p>莲藕 =&gt; 优质碳水</p>
+<blockquote>
+<p>剩下的各种杂粮米以低 GI 为选择重点，按个人喜好采</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="蔬菜"><a href="#蔬菜" class="headerlink" title="蔬菜"></a>蔬菜</h3><ol>
+<li><p>彩椒和各种椒 =&gt; 丰富的香气和营养, 轻松单炒或搭配，中西处理皆可</p>
+<blockquote>
+<p>蔬菜保证多样化, 新鲜即可</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="水果"><a href="#水果" class="headerlink" title="水果"></a>水果</h3><ol>
+<li><p>木瓜 =&gt; 糖分不高，但是营养价值高</p>
+</li>
+<li><p>芒果 =&gt; 糖分高，少吃，满足感强，可以代替甜品</p>
+<blockquote>
+<p>水果糖分要注意，经常次，但是不要吃太多</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="坚果"><a href="#坚果" class="headerlink" title="坚果"></a>坚果</h3><ol>
+<li>开心果 =&gt; 好吃营养价值高</li>
+<li>花生 =&gt; 营养价值高 价格美丽</li>
+</ol>
+<blockquote>
+<p>坚果选择 无糖无油尽量没有额外添加剂的坚果 每天一小把看心情</p>
+</blockquote>
+<h3 id="蛋白质"><a href="#蛋白质" class="headerlink" title="蛋白质"></a>蛋白质</h3><ol>
+<li>鸡肉 =&gt; 优质白肉 碳水化物低 蛋白质高 价格美丽</li>
+<li>鱼肉 =&gt; 优质白肉 碳水化物低 蛋白质高 脂肪高 价格美丽</li>
+<li>牛肉 =&gt; 女性补血的最佳食物 碳水化物低 蛋白质高 脂肪高 好吃的价格不美丽</li>
+<li>鸡蛋 =&gt; 自然界中吸收效率最高的蛋白质</li>
+<li>豆类 =&gt; 各种豆子和豆罐头都可以，方便即食好处理</li>
+<li>牛奶 =&gt; 巴氏杀菌乳即可 不要买含糖有额外添加剂的牛奶</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">最简单的食物搭配原则</span><br><span class="line"></span><br><span class="line">一个盘子，把蛋白质放到盘子30% 碳水化合物 40% 28%的蔬菜水果 2%坚果</span><br></pre></td></tr></table></figure>
+
         
       
     </div>
@@ -527,7 +576,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/maxProduct乘积最大子序列/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/arrayMove数组交换位置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZiXiu">
@@ -542,7 +591,7 @@
         <h1 class="post-title" itemprop="name headline">
           
             
-            <a href="/2019/09/28/maxProduct乘积最大子序列/" class="post-title-link" itemprop="url">maxProduct</a>
+            <a href="/2019/09/28/arrayMove数组交换位置/" class="post-title-link" itemprop="url">函数表现</a>
           
         </h1>
 
@@ -557,7 +606,7 @@
                 
               
 
-              <time title="Created: 2019-09-28 21:11:47" itemprop="dateCreated datePublished" datetime="2019-09-28T21:11:47+08:00">2019-09-28</time>
+              <time title="Created: 2019-09-28 21:15:20" itemprop="dateCreated datePublished" datetime="2019-09-28T21:15:20+08:00">2019-09-28</time>
             </span>
           
             
@@ -568,7 +617,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-16 19:06:42" itemprop="dateModified" datetime="2019-10-16T19:06:42+08:00">2019-10-16</time>
+                <time title="Modified: 2019-10-16 19:06:06" itemprop="dateModified" datetime="2019-10-16T19:06:06+08:00">2019-10-16</time>
               </span>
             
           
@@ -601,7 +650,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> maxProduct = <span class="function"><span class="keyword">function</span>(<span class="params">nums: <span class="built_in">number</span>[]</span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> max = nums[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">let</span> min = nums[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">let</span> res = nums[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> tmp = min;</span><br><span class="line">    min = <span class="built_in">Math</span>.min(nums[i], <span class="built_in">Math</span>.min(max * nums[i], min * nums[i]));</span><br><span class="line">    max = <span class="built_in">Math</span>.max(nums[i], <span class="built_in">Math</span>.max(max * nums[i], tmp * nums[i]));</span><br><span class="line">    res = <span class="built_in">Math</span>.max(res, max);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrayMove</span>&lt;<span class="title">T</span>&gt;(<span class="params">array: T[], oldIndex: <span class="built_in">number</span>, newIndex: <span class="built_in">number</span></span>): <span class="title">T</span>[] </span>&#123;</span><br><span class="line">  [array[oldIndex], array[newIndex]] = [array[newIndex], array[oldIndex]];</span><br><span class="line">  <span class="keyword">return</span> array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
         
       
     </div>
@@ -623,7 +673,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/isPalindrome验证回文串/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/animation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZiXiu">
@@ -638,7 +688,7 @@
         <h1 class="post-title" itemprop="name headline">
           
             
-            <a href="/2019/09/28/isPalindrome验证回文串/" class="post-title-link" itemprop="url">isPalindrome</a>
+            <a href="/2019/09/28/animation/" class="post-title-link" itemprop="url">JavaScript origin animation</a>
           
         </h1>
 
@@ -653,7 +703,7 @@
                 
               
 
-              <time title="Created: 2019-09-28 21:11:47" itemprop="dateCreated datePublished" datetime="2019-09-28T21:11:47+08:00">2019-09-28</time>
+              <time title="Created: 2019-09-28 22:32:24" itemprop="dateCreated datePublished" datetime="2019-09-28T22:32:24+08:00">2019-09-28</time>
             </span>
           
             
@@ -664,7 +714,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-16 19:06:39" itemprop="dateModified" datetime="2019-10-16T19:06:39+08:00">2019-10-16</time>
+                <time title="Modified: 2019-10-16 19:06:02" itemprop="dateModified" datetime="2019-10-16T19:06:02+08:00">2019-10-16</time>
               </span>
             
           
@@ -697,7 +747,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; s</span></span><br><span class="line"><span class="comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> isPalindrome = <span class="function"><span class="keyword">function</span>(<span class="params">s: <span class="built_in">string</span></span>): <span class="title">boolean</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s.replace(<span class="regexp">/[^0-9a-z]/gi</span>, <span class="string">''</span>).toLowerCase().split(<span class="string">''</span>).every(<span class="function">(<span class="params">item, i, arr</span>)=&gt;</span>item === arr[arr.length<span class="number">-1</span>-i])</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <h2 id="JavaScript-Origin-animation"><a href="#JavaScript-Origin-animation" class="headerlink" title="JavaScript Origin animation"></a>JavaScript Origin animation</h2><h4 id="list-animation"><a href="#list-animation" class="headerlink" title="list animation"></a>list animation</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.from(lists).map(<span class="function">(<span class="params">item, key</span>)=&gt;</span>&#123;</span><br><span class="line">	setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">		item.style.transform = <span class="string">`translate(<span class="subst">$&#123;&#125;</span>, <span class="subst">$&#123;&#125;</span>)`</span>;</span><br><span class="line">	&#125;, key * <span class="number">100</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/2019/09/28/animation/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -719,7 +778,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 

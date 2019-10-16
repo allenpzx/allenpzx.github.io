@@ -239,7 +239,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/函数表现/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/sku_filter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZiXiu">
@@ -254,7 +254,7 @@
         <h1 class="post-title" itemprop="name headline">
           
             
-            <a href="/2019/09/28/函数表现/" class="post-title-link" itemprop="url">函数表现</a>
+            <a href="/2019/09/28/sku_filter/" class="post-title-link" itemprop="url">SKU filter</a>
           
         </h1>
 
@@ -269,7 +269,7 @@
                 
               
 
-              <time title="Created: 2019-09-28 21:11:47" itemprop="dateCreated datePublished" datetime="2019-09-28T21:11:47+08:00">2019-09-28</time>
+              <time title="Created: 2019-09-28 22:32:24" itemprop="dateCreated datePublished" datetime="2019-09-28T22:32:24+08:00">2019-09-28</time>
             </span>
           
             
@@ -280,7 +280,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-11 13:14:24" itemprop="dateModified" datetime="2019-10-11T13:14:24+08:00">2019-10-11</time>
+                <time title="Modified: 2019-10-16 19:07:05" itemprop="dateModified" datetime="2019-10-16T19:07:05+08:00">2019-10-16</time>
               </span>
             
           
@@ -313,230 +313,29 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><strong>函数表现</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F1</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'f1'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F2</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'F2'</span></span><br><span class="line">  <span class="keyword">return</span> &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'1: '</span>, <span class="keyword">new</span> F1().name)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'2: '</span>, F1().name)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'3: '</span>, <span class="keyword">new</span> F2().name);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'4: '</span>, F2().name);</span><br></pre></td></tr></table></figure></p>
-<p><strong>运行结果👇</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1: f1</span><br><span class="line"> </span><br><span class="line">2: error: Uncaught TypeError: Cannot read property &apos;name&apos; of undefined</span><br><span class="line"> </span><br><span class="line">3: undefined</span><br><span class="line"></span><br><span class="line">4: undefined</span><br></pre></td></tr></table></figure></p>
-<hr>
-<p><strong>引用MDN的一段话关于 new 操作符</strong>  </p>
-<blockquote>
-<p>The new operator lets developers create an instance of a user-defined object type or of one of the built-in object types that has a constructor function. The new keyword does the following things:</p>
-<ol>
-<li>Creates a blank, plain JavaScript object;</li>
-<li>Links (sets the constructor of) this object to another object;</li>
-<li>Passes the newly created object from Step 1 as the this context;</li>
-<li>Returns this if the function doesn’t return its own object.</li>
+          <h3 id="sku-filter"><a href="#sku-filter" class="headerlink" title="sku-filter"></a>sku-filter</h3><p><a href="https://nodei.co/npm/sku-filter/" target="_blank" rel="noopener"><img src="https://nodei.co/npm/sku-filter.png" alt="NPM"></a></p>
+<h5 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h5><p><a href="https://allenpzx.github.io/sku-filter/example/" target="_blank" rel="noopener">点击查看演示</a></p>
+<h5 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景:"></a>使用场景:</h5><p>商品详情页一般有 <code>Product =&gt; SKUS&lt;Array&gt; =&gt; types&lt;Array&gt;</code>1对n对n的关系</p>
+<p>初始化把已有的SKUs渲染出来的时候, 需要遍历嵌套的数据</p>
+<p>每次点击直接对原始数据进行过滤操作，也需要遍历嵌套的数据</p>
+<p>这些会造成很多不必要的遍历操作</p>
+<p>实际上我们后续只会对<code>types&lt;Array&gt;</code>的数据进行交互，</p>
+<p>选择的条件满足一个SKU的时候根据对应关系把这个SKU找到即可</p>
+<p>所以我们在初始化遍历原始数据的时候建立对应关系，后续只操作types, 当选择条件已满，返回符合条件的那个唯一SKU</p>
+<h5 id="SKU"><a href="#SKU" class="headerlink" title="SKU"></a>SKU</h5><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"id"</span>: <span class="number">106</span>, </span><br><span class="line">    <span class="attr">"name"</span>: <span class="literal">null</span>, </span><br><span class="line">    <span class="attr">"description"</span>: <span class="literal">null</span>, </span><br><span class="line">    <span class="attr">"price"</span>: &#123;</span><br><span class="line">        <span class="attr">"level1"</span>: <span class="string">"10"</span>, </span><br><span class="line">        <span class="attr">"level2"</span>: <span class="string">"5"</span></span><br><span class="line">    &#125;, </span><br><span class="line">    <span class="attr">"type"</span>: &#123;</span><br><span class="line">        <span class="attr">"颜色"</span>: <span class="string">"红"</span>, </span><br><span class="line">        <span class="attr">"大小"</span>: <span class="string">"S"</span>, </span><br><span class="line">        <span class="attr">"性别"</span>: <span class="string">"男"</span></span><br><span class="line">    &#125;, </span><br><span class="line">    <span class="attr">"image"</span>: <span class="string">"default_point_shop_product_sku.jpg"</span>, </span><br><span class="line">    <span class="attr">"stock"</span>: <span class="string">"99999995"</span>, </span><br><span class="line">    <span class="attr">"point_shop_product_id"</span>: <span class="string">"3"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Map-about-Product-gt-SKUS"><a href="#Map-about-Product-gt-SKUS" class="headerlink" title="Map about Product =&gt; SKUS"></a>Map about Product =&gt; SKUS</h5><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"code"</span>: <span class="number">1</span>, </span><br><span class="line">    <span class="attr">"data"</span>: &#123;</span><br><span class="line">        <span class="attr">"id"</span>: <span class="number">3</span>, </span><br><span class="line">        <span class="attr">"min_price"</span>: &#123;</span><br><span class="line">            <span class="attr">"level1"</span>: <span class="string">"10"</span>, </span><br><span class="line">            <span class="attr">"level2"</span>: <span class="string">"5"</span></span><br><span class="line">        &#125;, </span><br><span class="line">        <span class="attr">"name"</span>: <span class="string">"aa"</span>, </span><br><span class="line">        <span class="attr">"description"</span>: <span class="string">"bb"</span>, </span><br><span class="line">        <span class="attr">"image"</span>: <span class="string">"1ac9d492.png"</span>, </span><br><span class="line">        <span class="attr">"created_at"</span>: <span class="string">"2018-08-10 13:31:25"</span>, </span><br><span class="line">        <span class="attr">"updated_at"</span>: <span class="string">"2018-10-12 17:01:33"</span>, </span><br><span class="line">        <span class="attr">"deleted_at"</span>: <span class="literal">null</span>, </span><br><span class="line">        <span class="attr">"category_id"</span>: <span class="string">"1"</span>, </span><br><span class="line">        <span class="attr">"sliders"</span>: [</span><br><span class="line">            <span class="string">"d6a4a433.png"</span>, </span><br><span class="line">            <span class="string">"c37daee5.jpg"</span></span><br><span class="line">        ], </span><br><span class="line">        <span class="attr">"vip_level_slug"</span>: <span class="string">"level1"</span>, </span><br><span class="line">        <span class="attr">"max_price"</span>: &#123;</span><br><span class="line">            <span class="attr">"level1"</span>: <span class="string">"10"</span>, </span><br><span class="line">            <span class="attr">"level2"</span>: <span class="string">"5"</span></span><br><span class="line">        &#125;, </span><br><span class="line">        <span class="attr">"type"</span>: [</span><br><span class="line">            <span class="string">"颜色"</span>, </span><br><span class="line">            <span class="string">"大小"</span>, </span><br><span class="line">            <span class="string">"性别"</span></span><br><span class="line">        ], </span><br><span class="line">        <span class="attr">"is_virtual"</span>: <span class="literal">true</span>, </span><br><span class="line">        <span class="attr">"used_num"</span>: <span class="string">"110"</span>, </span><br><span class="line">        <span class="attr">"details"</span>: <span class="string">"&lt;p&gt;cc&lt;/p&gt;"</span>, </span><br><span class="line">        <span class="attr">"limit_num"</span>: <span class="string">"0"</span>, </span><br><span class="line">        <span class="attr">"partner_shop_id"</span>: <span class="string">"58"</span>, </span><br><span class="line">        <span class="attr">"is_recommend"</span>: <span class="literal">true</span>, </span><br><span class="line">        <span class="attr">"category_sort"</span>: <span class="string">"0"</span>, </span><br><span class="line">        <span class="attr">"all_sort"</span>: <span class="string">"0"</span>, </span><br><span class="line">        <span class="attr">"recommend_sort"</span>: <span class="string">"0"</span>, </span><br><span class="line">        <span class="attr">"is_online"</span>: <span class="literal">true</span>, </span><br><span class="line">        <span class="attr">"is_collected"</span>: <span class="literal">true</span>, </span><br><span class="line">        <span class="attr">"all_stock"</span>: <span class="number">129999951</span>, </span><br><span class="line">        <span class="attr">"skus"</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">"id"</span>: <span class="number">106</span>, </span><br><span class="line">                <span class="attr">"name"</span>: <span class="literal">null</span>, </span><br><span class="line">                <span class="attr">"description"</span>: <span class="literal">null</span>, </span><br><span class="line">                <span class="attr">"price"</span>: &#123;</span><br><span class="line">                    <span class="attr">"level1"</span>: <span class="string">"10"</span>, </span><br><span class="line">                    <span class="attr">"level2"</span>: <span class="string">"5"</span></span><br><span class="line">                &#125;, </span><br><span class="line">                <span class="attr">"type"</span>: &#123;</span><br><span class="line">                    <span class="attr">"颜色"</span>: <span class="string">"红"</span>, </span><br><span class="line">                    <span class="attr">"大小"</span>: <span class="string">"S"</span>, </span><br><span class="line">                    <span class="attr">"性别"</span>: <span class="string">"男"</span></span><br><span class="line">                &#125;, </span><br><span class="line">                <span class="attr">"image"</span>: <span class="string">"default_point_shop_product_sku.jpg"</span>, </span><br><span class="line">                <span class="attr">"stock"</span>: <span class="string">"99999995"</span>, </span><br><span class="line">                <span class="attr">"point_shop_product_id"</span>: <span class="string">"3"</span></span><br><span class="line">            &#125;, </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">"id"</span>: <span class="number">107</span>, </span><br><span class="line">                <span class="attr">"name"</span>: <span class="literal">null</span>, </span><br><span class="line">                <span class="attr">"description"</span>: <span class="literal">null</span>, </span><br><span class="line">                <span class="attr">"price"</span>: &#123;</span><br><span class="line">                    <span class="attr">"level1"</span>: <span class="string">"10"</span>, </span><br><span class="line">                    <span class="attr">"level2"</span>: <span class="string">"5"</span></span><br><span class="line">                &#125;, </span><br><span class="line">                <span class="attr">"type"</span>: &#123;</span><br><span class="line">                    <span class="attr">"颜色"</span>: <span class="string">"红"</span>, </span><br><span class="line">                    <span class="attr">"大小"</span>: <span class="string">"XL"</span>, </span><br><span class="line">                    <span class="attr">"性别"</span>: <span class="string">"男"</span></span><br><span class="line">                &#125;, </span><br><span class="line">                <span class="attr">"image"</span>: <span class="string">"default_point_shop_product_sku.jpg"</span>, </span><br><span class="line">                <span class="attr">"stock"</span>: <span class="string">"9999991"</span>, </span><br><span class="line">                <span class="attr">"point_shop_product_id"</span>: <span class="string">"3"</span></span><br><span class="line">            &#125;, </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">"id"</span>: <span class="number">108</span>, </span><br><span class="line">                <span class="attr">"name"</span>: <span class="literal">null</span>, </span><br><span class="line">                <span class="attr">"description"</span>: <span class="literal">null</span>, </span><br><span class="line">                <span class="attr">"price"</span>: &#123;</span><br><span class="line">                    <span class="attr">"level1"</span>: <span class="string">"10"</span>, </span><br><span class="line">                    <span class="attr">"level2"</span>: <span class="string">"5"</span></span><br><span class="line">                &#125;, </span><br><span class="line">                <span class="attr">"type"</span>: &#123;</span><br><span class="line">                    <span class="attr">"颜色"</span>: <span class="string">"绿"</span>, </span><br><span class="line">                    <span class="attr">"大小"</span>: <span class="string">"XL"</span>, </span><br><span class="line">                    <span class="attr">"性别"</span>: <span class="string">"女"</span></span><br><span class="line">                &#125;, </span><br><span class="line">                <span class="attr">"image"</span>: <span class="string">"default_point_shop_product_sku.jpg"</span>, </span><br><span class="line">                <span class="attr">"stock"</span>: <span class="string">"9999966"</span>, </span><br><span class="line">                <span class="attr">"point_shop_product_id"</span>: <span class="string">"3"</span></span><br><span class="line">            &#125;, </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">"id"</span>: <span class="number">109</span>, </span><br><span class="line">                <span class="attr">"name"</span>: <span class="literal">null</span>, </span><br><span class="line">                <span class="attr">"description"</span>: <span class="literal">null</span>, </span><br><span class="line">                <span class="attr">"price"</span>: &#123;</span><br><span class="line">                    <span class="attr">"level1"</span>: <span class="string">"10"</span>, </span><br><span class="line">                    <span class="attr">"level2"</span>: <span class="string">"5"</span></span><br><span class="line">                &#125;, </span><br><span class="line">                <span class="attr">"type"</span>: &#123;</span><br><span class="line">                    <span class="attr">"颜色"</span>: <span class="string">"红"</span>, </span><br><span class="line">                    <span class="attr">"大小"</span>: <span class="string">"SL"</span>, </span><br><span class="line">                    <span class="attr">"性别"</span>: <span class="string">"女"</span></span><br><span class="line">                &#125;, </span><br><span class="line">                <span class="attr">"image"</span>: <span class="string">"default_point_shop_product_sku.jpg"</span>, </span><br><span class="line">                <span class="attr">"stock"</span>: <span class="string">"9999999"</span>, </span><br><span class="line">                <span class="attr">"point_shop_product_id"</span>: <span class="string">"3"</span></span><br><span class="line">            &#125;</span><br><span class="line">        ], </span><br><span class="line">        <span class="attr">"partner_shop"</span>: &#123;</span><br><span class="line">            <span class="attr">"id"</span>: <span class="number">58</span>, </span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"测试品牌1"</span>, </span><br><span class="line">            <span class="attr">"created_at"</span>: <span class="string">"2018-08-09 10:48:23"</span>, </span><br><span class="line">            <span class="attr">"updated_at"</span>: <span class="string">"2018-08-09 10:48:23"</span>, </span><br><span class="line">            <span class="attr">"support_phone"</span>: <span class="literal">null</span>, </span><br><span class="line">            <span class="attr">"support_web_link"</span>: <span class="literal">null</span>, </span><br><span class="line">            <span class="attr">"url_to_some_news"</span>: <span class="literal">null</span>, </span><br><span class="line">            <span class="attr">"checkbox_text_en"</span>: <span class="literal">null</span>, </span><br><span class="line">            <span class="attr">"checkbox_text_cn"</span>: <span class="literal">null</span>, </span><br><span class="line">            <span class="attr">"lunch_website_button_text"</span>: <span class="literal">null</span>, </span><br><span class="line">            <span class="attr">"support_details"</span>: <span class="literal">null</span>, </span><br><span class="line">            <span class="attr">"logo_image"</span>: <span class="string">"9b2b75f6.png"</span>, </span><br><span class="line">            <span class="attr">"description"</span>: <span class="string">"测试品牌1简介"</span>, </span><br><span class="line">            <span class="attr">"detail"</span>: <span class="string">"测试品牌1详情"</span>, </span><br><span class="line">            <span class="attr">"discount"</span>: [ ]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h5><h6 id="安装-npm-install-save-sku-filter"><a href="#安装-npm-install-save-sku-filter" class="headerlink" title="安装 npm install --save sku-filter"></a>安装 <code>npm install --save sku-filter</code></h6><h6 id="引入-import-SKUFilter-from-quot-sku-filter-quot"><a href="#引入-import-SKUFilter-from-quot-sku-filter-quot" class="headerlink" title="引入 import SKUFilter from &quot;sku-filter&quot;"></a>引入 <code>import SKUFilter from &quot;sku-filter&quot;</code></h6><ol>
+<li><p>实例化</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> skus = <span class="keyword">new</span> SKUFilter(&#123;<span class="attr">data</span>: skus&lt;<span class="built_in">Array</span>&gt;&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化数据</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> init = skus.initial();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>过滤数据 输入已选条件(sku.types)</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> result = skus.filter(conditions&lt;<span class="built_in">Array</span>&gt;); <span class="comment">// [&#123;颜色: '红'&#125;]</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-</blockquote>
-<p><code>new</code>做了这4件事</p>
-<ol>
-<li>创建一个空的简单JavaScript对象（即{}）</li>
-<li>链接该对象（即设置该对象的构造函数）到另一个对象</li>
-<li>将步骤1新创建的对象作为this的上下文</li>
-<li>如果该函数没有返回对象，则返回this</li>
-</ol>
-<p>函数执行默认返回undefined<br><code>new</code>构造函数默认返回<code>this</code><br>指定返回值优先级最高</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/手写标准方法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZiXiu">
-      <meta itemprop="description" content="Front-End Engineer">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/24787963?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zixiu">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            
-            <a href="/2019/09/28/手写标准方法/" class="post-title-link" itemprop="url">手写一些API</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-28 21:11:47" itemprop="dateCreated datePublished" datetime="2019-09-28T21:11:47+08:00">2019-09-28</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-11 13:14:36" itemprop="dateModified" datetime="2019-10-11T13:14:36+08:00">2019-10-11</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="手写一些方法"><a href="#手写一些方法" class="headerlink" title="手写一些方法"></a>手写一些方法</h4><p><strong>instanceof</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_instanceof</span>(<span class="params">left, right</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (left.__proto__ === <span class="literal">null</span> || left.__proto__ === <span class="literal">undefined</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">return</span> left.__proto__ === right.prototype</span><br><span class="line">    ? <span class="literal">true</span></span><br><span class="line">    : _instanceof(left.__proto__, right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>new</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factory</span>(<span class="params">fn, ...args</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> o = &#123;&#125;;</span><br><span class="line">  o.__proto__ = fn.prototype;</span><br><span class="line">  fn.call(o, ...args);</span><br><span class="line">  <span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>call</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype._call = <span class="function"><span class="keyword">function</span>(<span class="params">context, ...args</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">"function"</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(</span><br><span class="line">      <span class="string">"Function.prototype._call - what is trying to be bound is not callable"</span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> ctx = context || <span class="built_in">window</span>;</span><br><span class="line">  ctx.fn = <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">const</span> result = ctx.fn(...args);</span><br><span class="line">  <span class="keyword">delete</span> ctx.fn;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>apply</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype._apply = <span class="function"><span class="keyword">function</span>(<span class="params">context, ...args</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">"function"</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(</span><br><span class="line">      <span class="string">"Function.prototype._apply - what is trying to be bound is not callable"</span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> ctx = context || <span class="built_in">window</span>;</span><br><span class="line">  ctx.fn = <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">const</span> result = ctx.fn(...args[<span class="number">0</span>]);</span><br><span class="line">  <span class="keyword">delete</span> ctx.fn;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>bind</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype._bind = <span class="function"><span class="keyword">function</span>(<span class="params">context, ...args</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> ctx = context || <span class="built_in">window</span>;</span><br><span class="line">  <span class="keyword">const</span> _this = <span class="keyword">this</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">result</span>(<span class="params">...argus</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> _this.apply(<span class="keyword">this</span> <span class="keyword">instanceof</span> result ? <span class="keyword">this</span> : ctx, [</span><br><span class="line">      ...args,</span><br><span class="line">      ...argus</span><br><span class="line">    ]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.prototype) &#123;</span><br><span class="line">    fn.prototype = <span class="keyword">this</span>.prototype;</span><br><span class="line">  &#125;</span><br><span class="line">  result.prototype = <span class="keyword">new</span> fn();</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/searchMatrix搜索二维矩阵/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZiXiu">
-      <meta itemprop="description" content="Front-End Engineer">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/24787963?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zixiu">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            
-            <a href="/2019/09/28/searchMatrix搜索二维矩阵/" class="post-title-link" itemprop="url">searchMatrix</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-28 21:11:47" itemprop="dateCreated datePublished" datetime="2019-09-28T21:11:47+08:00">2019-09-28</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-11 13:15:39" itemprop="dateModified" datetime="2019-10-11T13:15:39+08:00">2019-10-11</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[][]&#125; matrix</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; target</span></span><br><span class="line"><span class="comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> searchMatrix = <span class="function"><span class="keyword">function</span>(<span class="params">matrix: [][], target: <span class="built_in">number</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> row = matrix.length;</span><br><span class="line">    <span class="keyword">if</span>(row === <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    <span class="keyword">let</span> col = matrix.slice(<span class="number">-1</span>)[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">if</span>(col === <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> r = row - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(r &gt;= <span class="number">0</span> &amp;&amp; i &lt; col) &#123;</span><br><span class="line">      <span class="keyword">if</span>(matrix[r][i] === target) <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">      <span class="keyword">if</span>(matrix[r][i] &lt; target) &#123;</span><br><span class="line">        i++</span><br><span class="line">      &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        r--</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">@param &#123;<span class="built_in">Array</span>&#125; <span class="keyword">let</span> skus = <span class="keyword">new</span> SKUFilter(&#123;<span class="attr">data</span>: skus&#125;); 必填</span><br><span class="line"></span><br><span class="line">@param &#123;Funtion&#125; initial() =&gt; &#123;</span><br><span class="line">    skus: skus&lt;<span class="built_in">Array</span>&gt;, <span class="comment">// 所有的sku [&#123;颜色: "红", 大小: "S", 性别: "男"&#125;]</span></span><br><span class="line">    sku_types: sku_types&lt;<span class="built_in">Array</span>&gt;, <span class="comment">// 所有的sku类型key ["颜色", "大小", "性别"]</span></span><br><span class="line">    convenient_render&lt;<span class="built_in">Map</span>&gt; <span class="comment">// 方便渲染的格式 &#123;"颜色" =&gt; [红, 黑], "大小" =&gt; [L, XL], "性别" =&gt; [男, 女]&#125;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@param &#123;<span class="built_in">Function</span>&#125; filter(conditions: <span class="built_in">Array</span>) =&gt; &#123;</span><br><span class="line">        selected_types&lt;<span class="built_in">Array</span>&gt;, <span class="comment">// 已选类型 ["颜色", "大小", "性别"]</span></span><br><span class="line"></span><br><span class="line">        selected_detail&lt;<span class="built_in">String</span>&gt;, <span class="comment">// 已选的具体参数 每次点击的时候显示已选的参数 "颜色: 红 "</span></span><br><span class="line"></span><br><span class="line">        match_skus&lt;<span class="built_in">Array</span>&gt;, <span class="comment">// 符合条件的SKU[&#123;颜色: "红", 大小: "XL", 性别: "男"&#125;]</span></span><br><span class="line"></span><br><span class="line">        mismatch_skus&lt;<span class="built_in">Array</span>&gt;, <span class="comment">// 不符合条件的SKU[&#123;颜色: "红", 大小: "XL", 性别: "男"&#125;]</span></span><br><span class="line"></span><br><span class="line">        render_list&lt;<span class="built_in">Array</span>&gt;, <span class="comment">// 比如 [&#123;颜色: "红"&#125;, &#123;大小: "XL"&#125;...]视图更新方便</span></span><br><span class="line"></span><br><span class="line">        final_sku&lt;<span class="built_in">Object</span>&gt;, <span class="comment">// 符合全部已选条件的sku &#123;颜色: "红", 大小: "XL", 性别: "男"&#125; || null</span></span><br><span class="line"></span><br><span class="line">        target&lt;<span class="built_in">Object</span>&gt;, <span class="comment">// 加入购物车或者立即购买需要提交的完整的SKU</span></span><br><span class="line">            <span class="comment">/* &#123;</span></span><br><span class="line"><span class="comment">                     description: null,</span></span><br><span class="line"><span class="comment">                     id: 107,</span></span><br><span class="line"><span class="comment">                     image: "default_point_shop_product_sku.jpg",</span></span><br><span class="line"><span class="comment">                     name: null,</span></span><br><span class="line"><span class="comment">                     point_shop_product_id: "3",  </span></span><br><span class="line"><span class="comment">                     price: &#123;level1: "10", level2: "5"&#125;,</span></span><br><span class="line"><span class="comment">                     stock: "9999991",</span></span><br><span class="line"><span class="comment">                     type: &#123;颜色: "红", 大小: "XL", 性别: "男"&#125;</span></span><br><span class="line"><span class="comment">            	&#125;</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@example </span><br><span class="line"></span><br><span class="line"> <span class="number">1.</span> 初始化SKU</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> skus = <span class="keyword">new</span> SKUFilter(&#123;<span class="attr">data</span>: skus&lt;<span class="built_in">Array</span>&gt;&#125;)</span><br><span class="line"></span><br><span class="line"> <span class="number">2.</span> 可选三种方法</span><br><span class="line"></span><br><span class="line">    <span class="number">1</span>) <span class="keyword">const</span> init = skus.initial();</span><br><span class="line"></span><br><span class="line">    <span class="number">2</span>) <span class="keyword">const</span> result = skus.filter(conditions&lt;<span class="built_in">Array</span>&gt;) <span class="comment">// [&#123;颜色: '红'&#125;]</span></span><br></pre></td></tr></table></figure>
         
       
     </div>
@@ -599,7 +398,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-11 13:15:47" itemprop="dateModified" datetime="2019-10-11T13:15:47+08:00">2019-10-11</time>
+                <time title="Modified: 2019-10-16 19:07:02" itemprop="dateModified" datetime="2019-10-16T19:07:02+08:00">2019-10-16</time>
               </span>
             
           
@@ -654,7 +453,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/compose/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/shuffle_animation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZiXiu">
@@ -669,7 +468,7 @@
         <h1 class="post-title" itemprop="name headline">
           
             
-            <a href="/2019/09/28/compose/" class="post-title-link" itemprop="url">compose</a>
+            <a href="/2019/09/28/shuffle_animation/" class="post-title-link" itemprop="url">Shuffle animation</a>
           
         </h1>
 
@@ -684,7 +483,7 @@
                 
               
 
-              <time title="Created: 2019-09-28 21:11:47" itemprop="dateCreated datePublished" datetime="2019-09-28T21:11:47+08:00">2019-09-28</time>
+              <time title="Created: 2019-09-28 22:32:24" itemprop="dateCreated datePublished" datetime="2019-09-28T22:32:24+08:00">2019-09-28</time>
             </span>
           
             
@@ -695,7 +494,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-11 13:14:53" itemprop="dateModified" datetime="2019-10-11T13:14:53+08:00">2019-10-11</time>
+                <time title="Modified: 2019-10-16 19:07:00" itemprop="dateModified" datetime="2019-10-16T19:07:00+08:00">2019-10-16</time>
               </span>
             
           
@@ -728,7 +527,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @param  &#123;...fn||arg&#125; fns from right to left</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compose</span>(<span class="params">...fns</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> fns.reduceRight(<span class="function">(<span class="params">arg, fn</span>) =&gt;</span> fn(arg), x);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @param  &#123;...fn||arg&#125; fns from left to right</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pipe</span>(<span class="params">...fns</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> fns.reduce(<span class="function">(<span class="params">arg, fn</span>) =&gt;</span> fn(arg), x);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h1 id="shuffle-animate"><a href="#shuffle-animate" class="headerlink" title="shuffle-animate"></a>shuffle-animate</h1><p><a href="https://nodei.co/npm/shuffle-animate/" target="_blank" rel="noopener"><img src="https://nodei.co/npm/shuffle-animate.png" alt="NPM"></a></p>
+<h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><p><img src="https://raw.githubusercontent.com/allenpzx/shuffle-animate/master/example/example.gif" alt="案例"></p>
+<h4 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h4><p><a href="https://allenpzx.github.io/shuffle-animate/example" target="_blank" rel="noopener">点击查看演示</a></p>
+<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><ol>
+<li><p>安装 <code>npm install shuffle-animate --save;</code></p>
+</li>
+<li><p>引入 <code>import ShuffleAnimate from &#39;shuffle-animate&#39;;</code></p>
+</li>
+<li><p>实例化</p>
+<ol>
+<li><p>配置DOM </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'container'</span>&gt;</span> // position: relative || absolute || fixed || sticky ......</span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-i</span>=<span class="string">'1'</span>&gt;</span>1<span class="tag">&lt;/<span class="name">span</span>&gt;</span>  // data-i = 'string' 配置索引</span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-i</span>=<span class="string">'2'</span>&gt;</span>2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">data-i</span>=<span class="string">'3'</span>&gt;</span>3<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取容器 <code>const box = document.getElementById(&#39;container&#39;);</code></p>
+</li>
+<li><p>创建对象 <code>const sa = new ShuffleAnimate({data: [...box.childrens]});</code> </p>
+</li>
+</ol>
+</li>
+<li><p>渲染</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sa.update(&#123;</span><br><span class="line">    target: &lt;Number&gt; || &lt;Array&gt;, // '1' || 1 目标值的索引 </span><br><span class="line">    shuffle: &lt;Boolean&gt;, // true || false 是否随机排序, 否的话按正序排列</span><br><span class="line">    ease: &lt;String&gt;, // 'easeInOutCirc' 速度曲线, 可选见下文, 也可以自己定制化贝塞尔曲线</span><br><span class="line">    time: &lt;String&gt;, // `2000ms` `2s` 过渡时间</span><br><span class="line">    center: &lt;Boolean&gt;, // true || false 用此参数则target必填, 表示target块会先过渡到容器的中点(过渡到中点的时间=time), 然后再过渡到目标位置</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">以上参数都不是必填项 sa.update() 执行默认随机效果</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="可选动画曲线"><a href="#可选动画曲线" class="headerlink" title="可选动画曲线"></a>可选动画曲线</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">easeInSine: <span class="string">`cubic-bezier(0.47, 0, 0.745, 0.715)`</span>,</span><br><span class="line">easeOutSine: <span class="string">`cubic-bezier(0.39, 0.575, 0.565, 1)`</span>,</span><br><span class="line">easeInOutSine: <span class="string">`cubic-bezier(0.445, 0.05, 0.55, 0.95)`</span>,</span><br><span class="line"></span><br><span class="line">easeInQuad: <span class="string">`cubic-bezier(0.55, 0.085, 0.68, 0.53)`</span>,</span><br><span class="line">easeOutQuad: <span class="string">`cubic-bezier(0.25, 0.46, 0.45, 0.94)`</span>,</span><br><span class="line">easeInOutQuad: <span class="string">`cubic-bezier(0.455, 0.03, 0.515, 0.955)`</span>,</span><br><span class="line"></span><br><span class="line">easeInCubic: <span class="string">`cubic-bezier(0.55, 0.055, 0.675, 0.19)`</span>,</span><br><span class="line">easeOutCubic: <span class="string">`cubic-bezier(0.215, 0.61, 0.355, 1)`</span>,</span><br><span class="line">easeInOutCubic: <span class="string">`cubic-bezier(0.645, 0.045, 0.355, 1)`</span>,</span><br><span class="line"></span><br><span class="line">easeInQuart: <span class="string">`cubic-bezier(0.895, 0.03, 0.685, 0.22)`</span>,</span><br><span class="line">easeOutQuart: <span class="string">`cubic-bezier(0.165, 0.84, 0.44, 1)`</span>,</span><br><span class="line">easeInOutQuart: <span class="string">`cubic-bezier(0.77, 0, 0.175, 1)`</span>,</span><br><span class="line"></span><br><span class="line">easeInQuint: <span class="string">`cubic-bezier(0.755, 0.05, 0.855, 0.06)`</span>,</span><br><span class="line">easeOutQuint: <span class="string">`cubic-bezier(0.23, 1, 0.32, 1)`</span>,</span><br><span class="line">easeInOutQuint: <span class="string">`cubic-bezier(0.86, 0, 0.07, 1)`</span>,</span><br><span class="line"></span><br><span class="line">easeInExpo: <span class="string">`cubic-bezier(0.95, 0.05, 0.795, 0.035)`</span>,</span><br><span class="line">easeOutExpo: <span class="string">`cubic-bezier(0.19, 1, 0.22, 1)`</span>,</span><br><span class="line">easeInOutExpo: <span class="string">`cubic-bezier(1, 0, 0, 1)`</span>,</span><br><span class="line"></span><br><span class="line">easeInCirc: <span class="string">`cubic-bezier(0.6, 0.04, 0.98, 0.335)`</span>,</span><br><span class="line">easeOutCirc: <span class="string">`cubic-bezier(0.075, 0.82, 0.165, 1)`</span>,</span><br><span class="line">easeInOutCirc: <span class="string">`cubic-bezier(0.785, 0.135, 0.15, 0.86)`</span>,</span><br><span class="line"></span><br><span class="line">easeInBack: <span class="string">`cubic-bezier(0.6, -0.28, 0.735, 0.045`</span>,</span><br><span class="line">easeOutBack: <span class="string">`cubic-bezier(0.175, 0.885, 0.32, 1.275)`</span>,</span><br><span class="line">easeInOutBack: <span class="string">`cubic-bezier(0.68, -0.55, 0.265, 1.55)`</span></span><br></pre></td></tr></table></figure>
+<h4 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> vertical = <span class="built_in">document</span>.querySelector(<span class="string">'#vertical'</span>);</span><br><span class="line">    <span class="keyword">const</span> verticals = <span class="keyword">new</span> ShuffleAnimate(&#123;</span><br><span class="line">        data: [...vertical.children]</span><br><span class="line">    &#125;);</span><br><span class="line">    vertical.addEventListener(<span class="string">'click'</span>, (e) =&gt; &#123;</span><br><span class="line">        [...vertical.children].map(<span class="function"><span class="params">x</span> =&gt;</span> &#123;</span><br><span class="line">            x.style.color = <span class="string">`black`</span></span><br><span class="line">        &#125;)</span><br><span class="line">        e.target.style.color = <span class="string">`red`</span>;</span><br><span class="line">        verticals.update(&#123;</span><br><span class="line">            target: e.target.dataset.i,</span><br><span class="line">            shuffle: <span class="literal">false</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
         
       
     </div>
@@ -750,7 +573,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/merge合并两个有序数组/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/searchMatrix搜索二维矩阵/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZiXiu">
@@ -765,7 +588,7 @@
         <h1 class="post-title" itemprop="name headline">
           
             
-            <a href="/2019/09/28/merge合并两个有序数组/" class="post-title-link" itemprop="url">merge</a>
+            <a href="/2019/09/28/searchMatrix搜索二维矩阵/" class="post-title-link" itemprop="url">searchMatrix</a>
           
         </h1>
 
@@ -791,7 +614,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-11 13:15:22" itemprop="dateModified" datetime="2019-10-11T13:15:22+08:00">2019-10-11</time>
+                <time title="Modified: 2019-10-16 19:06:57" itemprop="dateModified" datetime="2019-10-16T19:06:57+08:00">2019-10-16</time>
               </span>
             
           
@@ -824,7 +647,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums1</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; m</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums2</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; n</span></span><br><span class="line"><span class="comment"> * @return &#123;void&#125; Do not return anything, modify nums1 in-place instead.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> merge = <span class="function"><span class="keyword">function</span>(<span class="params">nums1: <span class="built_in">number</span>[], m: <span class="built_in">number</span>, nums2: <span class="built_in">number</span>[], n: <span class="built_in">number</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> s1 = nums1.slice(<span class="number">0</span>, m);</span><br><span class="line">    <span class="keyword">let</span> s2 = nums2.slice(<span class="number">0</span>, n);</span><br><span class="line">    [...s1, ...s2].sort(<span class="function">(<span class="params">a, b</span>)=&gt;</span>a-b).map(<span class="function">(<span class="params">v, k</span>) =&gt;</span> nums1[k] = v);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[][]&#125; matrix</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; target</span></span><br><span class="line"><span class="comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> searchMatrix = <span class="function"><span class="keyword">function</span>(<span class="params">matrix: [][], target: <span class="built_in">number</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> row = matrix.length;</span><br><span class="line">    <span class="keyword">if</span>(row === <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    <span class="keyword">let</span> col = matrix.slice(<span class="number">-1</span>)[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">if</span>(col === <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> r = row - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(r &gt;= <span class="number">0</span> &amp;&amp; i &lt; col) &#123;</span><br><span class="line">      <span class="keyword">if</span>(matrix[r][i] === target) <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">      <span class="keyword">if</span>(matrix[r][i] &lt; target) &#123;</span><br><span class="line">        i++</span><br><span class="line">      &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        r--</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
         
       
     </div>
@@ -887,7 +710,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-11 13:15:35" itemprop="dateModified" datetime="2019-10-11T13:15:35+08:00">2019-10-11</time>
+                <time title="Modified: 2019-10-16 19:06:53" itemprop="dateModified" datetime="2019-10-16T19:06:53+08:00">2019-10-16</time>
               </span>
             
           
@@ -938,300 +761,11 @@
   
 
     
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/getType/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZiXiu">
-      <meta itemprop="description" content="Front-End Engineer">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/24787963?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zixiu">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            
-            <a href="/2019/09/28/getType/" class="post-title-link" itemprop="url">getType</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-28 21:11:47" itemprop="dateCreated datePublished" datetime="2019-09-28T21:11:47+08:00">2019-09-28</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-11 13:15:03" itemprop="dateModified" datetime="2019-10-11T13:15:03+08:00">2019-10-11</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;object&#125; </span></span><br><span class="line"><span class="comment"> * @return &#123;string&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getType</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString</span><br><span class="line">    .call(obj)</span><br><span class="line">    .match(<span class="regexp">/\s[a-zA-Z]+/</span>)[<span class="number">0</span>]</span><br><span class="line">    .toLowerCase();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/typeof表现/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZiXiu">
-      <meta itemprop="description" content="Front-End Engineer">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/24787963?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zixiu">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            
-            <a href="/2019/09/28/typeof表现/" class="post-title-link" itemprop="url">typeof 特性</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-28 21:11:47" itemprop="dateCreated datePublished" datetime="2019-09-28T21:11:47+08:00">2019-09-28</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-11 13:16:38" itemprop="dateModified" datetime="2019-10-11T13:16:38+08:00">2019-10-11</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong><code>typeof</code> 特性</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> &#123;&#125; =&gt; <span class="string">'object'</span></span><br><span class="line"><span class="keyword">typeof</span> [] =&gt; <span class="string">'object'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> =&gt; <span class="string">'object'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">RegExp</span>() =&gt; <span class="string">'object'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Date</span>() =&gt; <span class="string">'object'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'test'</span>) =&gt; <span class="string">'object'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">100</span>) =&gt; <span class="string">'object'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">0</span> =&gt; <span class="string">'number'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">Infinity</span> =&gt; <span class="string">'number'</span>;</span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">NaN</span> =&gt; <span class="string">'number'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> () =&gt; &#123;&#125; =&gt; <span class="string">'function'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="class"><span class="keyword">class</span> <span class="title">TEST</span> </span>&#123;&#125; =&gt; <span class="string">'function'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> Functiuon() =&gt; <span class="string">'function'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span> =&gt; <span class="string">'boolean'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> =&gt; <span class="string">'undefined'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">document</span>.all =&gt; <span class="string">'undefined'</span></span><br><span class="line"><span class="keyword">typeof</span> undeclaredVariable =&gt; <span class="string">'undefined'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">'test'</span> =&gt; <span class="string">'string'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">Symbol</span>() =&gt; <span class="string">'symbol'</span></span><br></pre></td></tr></table></figure>
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="default">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/moveZeroes移动零/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZiXiu">
-      <meta itemprop="description" content="Front-End Engineer">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/24787963?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Zixiu">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            
-            <a href="/2019/09/28/moveZeroes移动零/" class="post-title-link" itemprop="url">moveZeroes</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-09-28 21:11:47" itemprop="dateCreated datePublished" datetime="2019-09-28T21:11:47+08:00">2019-09-28</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-11 13:15:26" itemprop="dateModified" datetime="2019-10-11T13:15:26+08:00">2019-10-11</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @return &#123;void&#125; Do not return anything, modify nums in-place instead.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> moveZeroes = <span class="function"><span class="keyword">function</span>(<span class="params">nums: <span class="built_in">number</span>[]</span>): <span class="title">void</span> </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> start = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> end = nums.length - <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span> (start &lt; end) &#123;</span><br><span class="line">    <span class="keyword">if</span> (nums[start] === <span class="number">0</span>) &#123;</span><br><span class="line">      nums.push(<span class="number">0</span>);</span><br><span class="line">      nums.splice(start, <span class="number">1</span>);</span><br><span class="line">      end--;</span><br><span class="line">      <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    start++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </article>
-  
-  
-  
-
-    
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1292,7 +826,7 @@
             <a href="/categories/">
           
         
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span>
         </a>
       </div>
@@ -1348,11 +882,8 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">ZiXiu</span>
+  <span class="author" itemprop="copyrightHolder">zixiu</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
-  </div>
-  <span class="post-meta-divider">|</span>
   <div class="theme-info">
       
     Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.1
