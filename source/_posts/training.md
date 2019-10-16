@@ -1,10 +1,10 @@
 ---
 title: 关于训练
-date: {{ date }}
+
 tags:
 - training
 categories:
-- JavaScript
+- fitness
 ---
 ## 记录关于健身的感悟
 

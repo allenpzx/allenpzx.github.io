@@ -1,6 +1,6 @@
 ---
 title: JavaScript origin animation
-date: {{ date }}
+
 tags:
 - JavaScript
 - Animation

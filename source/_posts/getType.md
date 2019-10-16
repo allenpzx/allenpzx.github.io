@@ -1,6 +1,6 @@
 ---
 title: getType
-date: {{ date }}
+
 tags:
 - JavaScript
 categories:

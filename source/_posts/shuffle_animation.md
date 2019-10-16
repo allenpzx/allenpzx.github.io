@@ -1,6 +1,6 @@
 ---
 title: Shuffle animation
-date: {{ date }}
+
 tags:
 - JavaScript
 - Animation

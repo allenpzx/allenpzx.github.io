@@ -1,6 +1,6 @@
 ---
 title: partition
-date: {{ date }}
+
 tags:
 - JavaScript
 categories:

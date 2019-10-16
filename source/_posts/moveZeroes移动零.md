@@ -1,6 +1,6 @@
 ---
 title: moveZeroes
-date: {{ date }}
+
 tags:
 - JavaScript
 categories:

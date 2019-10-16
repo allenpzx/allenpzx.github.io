@@ -1,6 +1,6 @@
 ---
 title: toCamelCase
-date: {{ date }}
+
 tags:
 - JavaScript
 - Animation

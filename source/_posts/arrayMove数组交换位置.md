@@ -1,12 +1,11 @@
 ---
 title: 函数表现
-date: {{ date }}
-tags:
-- JavaScript
-categories:
-- JavaScript
----
 
+tags:
+  - JavaScript
+categories:
+  - JavaScript
+---
 
 ```typescript
 function arrayMove<T>(array: T[], oldIndex: number, newIndex: number): T[] {

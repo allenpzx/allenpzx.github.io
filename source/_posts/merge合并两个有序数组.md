@@ -1,6 +1,6 @@
 ---
 title: merge
-date: {{ date }}
+
 tags:
 - JavaScript
 categories:

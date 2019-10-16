@@ -1,6 +1,6 @@
 ---
 title: compose
-date: {{ date }}
+
 tags:
 - JavaScript
 categories:

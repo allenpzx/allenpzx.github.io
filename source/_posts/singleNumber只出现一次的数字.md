@@ -1,6 +1,6 @@
 ---
 title: singleNumber
-date: {{ date }}
+
 tags:
 - JavaScript
 categories:

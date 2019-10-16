@@ -1,6 +1,6 @@
 ---
 title: isPalindrome
-date: {{ date }}
+
 tags:
 - JavaScript
 categories:

@@ -1,6 +1,6 @@
 ---
 title: SKU filter
-date: {{ date }}
+
 tags:
 - JavaScript
 - SKU

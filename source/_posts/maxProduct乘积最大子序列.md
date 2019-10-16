@@ -1,6 +1,6 @@
 ---
 title: maxProduct
-date: {{ date }}
+
 tags:
 - JavaScript
 categories:

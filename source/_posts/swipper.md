@@ -1,6 +1,6 @@
 ---
 title: swiper by origin JavaScript
-date: {{ date }}
+
 tags:
 - swiper
 - CSS

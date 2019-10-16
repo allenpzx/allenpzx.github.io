@@ -1,6 +1,6 @@
 ---
 title: searchMatrix
-date: {{ date }}
+
 tags:
 - JavaScript
 categories:
